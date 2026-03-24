@@ -2,7 +2,8 @@ import ReactFlow, {
   Background,
   Controls,
   useNodesState,
-  useEdgesState
+  useEdgesState,
+  addEdge
 } from "reactflow"
 import "reactflow/dist/style.css"
 import { useState } from "react"
@@ -23,6 +24,8 @@ import "./styles.css"
 const nodeTypes = {
   prompt: PromptNode,
   terraform: ProviderNode,
+  github: ProviderNode,
+  confluence: ProviderNode,
   llm: LLMNode,
   filter: FilterNode
 }
@@ -82,7 +85,7 @@ export default function App() {
           edges={edges}
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
-          onConnect={params => setEdges(e => [...e, params])}
+          onConnect={params => setEdges(e => addEdge(params, e))}
           nodeTypes={nodeTypes}
           fitView
         >
