@@ -1,0 +1,94 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .app {
+    display: flex;
+    height: 100%;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    background: #fafafa;
+  }
+  
+  .sidebar button {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .sidebar button:hover {
+    background: #f0f0f0;
+  }
+  
+  /* Canvas */
+  .canvas {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Controls */
+  .controls {
+    padding: 8px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .controls button {
+    padding: 6px 12px;
+    border: 1px solid #333;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Output */
+  .output {
+    height: 260px;
+    border-top: 1px solid #ddd;
+    padding: 8px;
+    overflow: auto;
+    background: #f9f9f9;
+  }
+  
+  pre {
+    background: #eee;
+    padding: 8px;
+    font-size: 12px;
+    overflow-x: auto;
+  }
+  
+  /* Nodes */
+  .node {
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 6px;
+    background: white;
+    width: 220px;
+  }
+  
+  .node-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .prompt-textarea {
+    width: 100%;
+    height: 70px;
+  }
+  
