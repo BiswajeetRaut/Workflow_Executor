@@ -3,6 +3,8 @@ export default function Sidebar({ addNode }: any) {
       <div className="sidebar">
         <button onClick={() => addNode("prompt")}>➕ Prompt</button>
         <button onClick={() => addNode("terraform")}>➕ Terraform</button>
+        <button onClick={() => addNode("github")}>➕ GitHub</button>
+        <button onClick={() => addNode("confluence")}>➕ Confluence</button>
         <button onClick={() => addNode("llm")}>➕ LLM</button>
         <button onClick={() => addNode("filter")}>➕ Filter</button>
       </div>
