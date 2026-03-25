@@ -26,6 +26,10 @@ def verify(req: VerifyRequest):
         raise HTTPException(400, str(exc)) from exc
     except ValidationError as exc:
         raise HTTPException(422, str(exc)) from exc
+    except (KeyError, ValueError, TypeError) as exc:
+        raise HTTPException(400, f"Invalid workflow payload: {exc}") from exc
+    except Exception as exc:
+        raise HTTPException(400, str(exc)) from exc
 
 
 @app.post("/run")

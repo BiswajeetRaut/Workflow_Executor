@@ -136,7 +136,11 @@ class TerraformAgent(ProviderAgent):
         ]
 
     def _list_workspaces(self, context: Dict[str, Any]) -> Dict[str, Any]:
-        organizations = context.get("organizations") or []
+        organizations = (
+            context.get("organizations")
+            or context.get("terraform", {}).get("result", {}).get("organizations")
+            or []
+        )
         if not organizations:
             org_name = context.get("organization_name")
             if org_name:
